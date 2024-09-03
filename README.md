@@ -1,3 +1,3 @@
 # resume-homepage
-https://resume.bingitech.io/
+# https://resume.bingitech.io/
 Welcome to my Resume
