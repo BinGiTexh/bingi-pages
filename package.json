@@ -1,0 +1,22 @@
+{
+  "name": "bingitech-portfolio",
+  "version": "1.0.0",
+  "description": "BingiTech strategic portfolio deployed on Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy --env production",
+    "dev": "wrangler dev",
+    "preview": "wrangler preview"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "portfolio",
+    "bingitech"
+  ],
+  "author": "BingiTech",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

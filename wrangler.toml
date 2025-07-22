@@ -1,0 +1,17 @@
+name = "bingitech-portfolio"
+main = "src/index.js"
+compatibility_date = "2024-07-22"
+
+[env.production]
+routes = [
+  { pattern = "bingitech.io/*", zone_name = "bingitech.io" },
+  { pattern = "www.bingitech.io/*", zone_name = "bingitech.io" }
+]
+
+[[env.production.kv_namespaces]]
+binding = "ANALYTICS"
+id = "your_kv_namespace_id_here"
+preview_id = "your_preview_kv_namespace_id_here"
+
+[vars]
+ENVIRONMENT = "production"
