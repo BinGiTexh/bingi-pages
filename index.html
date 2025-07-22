@@ -1,686 +1,567 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Malik Cameron</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-default_background {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 237, 214, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 237, 214, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
-.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="f0d31945-7aba-4be7-9349-39f894ec5652" class="page mono"><header><h1 class="page-title">Malik Cameron</h1><p class="page-description"></p></header><div class="page-body"><p id="162be8ac-5a48-4901-b325-fdf1b43c53ad" class=""> </p><p id="4c6f1865-4f5c-4e04-a570-7cdd284c1cc2" class="">Playa Vista, Los Angeles, CA 🌴 🌄</p><hr id="4d3341b3-9181-47aa-af16-15fd1ba84c1a"/><div id="4bf78fdb-d8f5-4540-a7bc-9a2bd25036e2" class="column-list"><div id="275ecda4-5015-481f-9a7f-e1fed6519f3c" style="width:68.75%" class="column"><h1 id="081c06e5-122f-4224-af29-cd2353989445" class="">Experience📝</h1><hr id="fdc3ba31-f9bd-4733-890c-e93bfeb220a6"/><p id="e2d61fc7-5af3-4457-8e34-bd32cc12e0c3" class=""><strong>DevOps Engineer<br/><br/></strong>Penske Media Corp  |  2023.08 – present</p><hr id="868d412f-8182-4e8c-8198-c06a30f0f14d"/><p id="e92594cb-fae4-4408-888f-236f9ae17464" class=""><mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•  </strong></mark>Developed an automated solution for developers to access database backups using a suite of AWS tools (Terraform - IAC ) such as Eventbridge, Lambda and S3; thus increasing developer productivity for their local environments.<mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•</strong></mark><mark class="highlight-default"> Responsible for diagnosing and fixing all AWS infrastructure issues for 100+ engineers</mark><mark class="highlight-gray"><strong>.</strong></mark><mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•  </strong></mark>Architecting and maintaining CI/CD workflows using Github actions to provide access to AWS</p><p id="3fde40eb-1abf-4399-87e7-0dfa7c94cc93" class=""><mark class="highlight-gray"><strong>•  </strong></mark>Spearheaded initiatives for cost optimization across several AWS accounts in the organization resulting in over $100k in cost savings for the organization<mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•  </strong></mark>Continue to refine newly adopted AWS Fargate pattern by including monitoring using New Relic, secrets rotation using 1Password and secrets manager.</p><p id="97742335-4281-4cb2-8fb3-3330dd934967" class=""><mark class="highlight-gray"><strong>•  </strong></mark>Creation, administration and management of Cloud Infrastructure using AWS CLI tooling, Terraform, and Kubernetes CLI tooling (Kubectl, kubectx, k9s)<mark class="highlight-gray"><br/><br/><br/></mark><strong>DevOps Engineer<br/><br/></strong>Sparks Marketing  |  2020.03 – 2023.08</p><hr id="4b95fb01-350f-411a-b5b7-07e4286f9c18"/><p id="73d8dfbc-12fb-405e-92d9-437228f7f624" class=""><mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•  </strong></mark>Automating and bootstrapping highly available, scalable, and secure cloud infrastructure using Terraform and Ansible<mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•  </strong></mark>Responsible for diagnosing issues, providing technical guidance to other team members, and driving architecture decisions for business initiatives</p><p id="bad6118c-a73e-4358-8622-45cea95f037f" class=""><mark class="highlight-gray"><strong>•  </strong></mark>Architecting and maintaining CI/CD workflows using Bitbucket pipelines and Github actions to test, build and release code to all environments</p><p id="14c2c462-04df-4db0-932d-9a617a1dcf7e" class=""><mark class="highlight-gray"><strong>•  </strong></mark>Implementing and securing containerized workflows using technologies such as Docker, Kubernetes, AWS ECR, Artifact Registry, Snyk<mark class="highlight-gray"><br/><br/></mark><mark class="highlight-gray"><strong>•  </strong></mark>Increased developer productivity by improving processes and tooling for deployment, observability, monitoring,<br/>and alerting.<br/></p><h1 id="5eca8deb-9dd2-4b4c-a3c4-b88e23510e1b" class="">Homelab Projects</h1><hr id="1e193a97-4e65-4e5e-812e-24c7ee4f5ebb"/><p id="9964f658-cf0b-4749-8242-7f1f6c39b7bb" class=""><strong>•  Machine Learning </strong><em>Project Chocolate</em><strong> - </strong>Creating a ML stool predictor based on collected images of my dogs’ chocolate 😉. </p><p id="ac80ac11-5336-490b-bef9-46ac9cece766" class=""><strong>•  Pipeline Infrastructure </strong><em>Data processing/ETL - Argo Workflow engine based pipelines for video, image and audio processing. </em></p><p id="3372c8fa-fe53-4d08-9d51-e0b0eecf8134" class=""><strong>•  Edge Infrastructure </strong><em>SRE/IT administration of homelab - Using a Turing Pi clusterboard with K3s to administer applications deployed across Edge devices such as Nvidia Jetson, Rasberry Pi devices.</em></p><h1 id="afce711e-1fc0-4faa-8228-5080e4badb4f" class="">Interests</h1><hr id="f9c5902a-75a9-4a5b-a29a-fa852d82934e"/><p id="219d8aa2-2a6e-4f54-9442-4c140b70c304" class="">•  <strong>Deep Learning - </strong>CNN &amp; RNN - For future projects that involve computer vision, object detection, music/audio generation</p><p id="18236282-e855-4053-ac60-e7ce535dd1e3" class="">• <strong> IoT </strong>- Distributed Workloads on edge devices. </p><p id="ee5a61f3-033a-454e-817f-3169aed72478" class="">• <strong> Technology/Football - </strong>Nerd, Tinkerer, Footballer</p><p id="216d662d-8a64-46fb-8bc3-f5f8c0b378a4" class="">
-</p></div><div id="d7d9dd96-b869-47a6-b0e8-e370412e1f83" style="width:31.25%" class="column"><h1 id="e1f9b9f4-8851-4903-8082-5666701ba5b5" class="">Contact</h1><hr id="43781f39-61b7-4873-9d78-ecc6b045da5c"/><p id="22efd5e2-4e98-4d73-8ee2-2c9428462f97" class="">(718-552-7953)<br/>malikcameron95@gmail.com<br/></p><p id="e2b10fde-b003-4db2-9b3a-97899800c0d0" class=""><a href="https://github.com/mcam10">https://github.com/mcam10</a></p><p id="c62c6b67-4df1-40a4-84cf-7da36a508dbb" class=""><a href="https://www.linkedin.com/in/malik-cameron/">https://www.linkedin.com/in/malik-cameron/</a></p><h1 id="5319974c-6966-439a-ae03-3a96c9e427ab" class="">Education</h1><hr id="4b1bb172-7fdf-4cce-af25-e9bb0a90811d"/><p id="ac7e0700-bf70-4a12-9ada-3f47e3f11bee" class=""><strong>Penn State University<br/>Journalism,B.A. <br/></strong><mark class="highlight-default">2013 – 2017</mark></p><p id="9e911b2e-bb08-4bbd-8256-b5ed35af7a30" class=""><strong>Information Sciences and Technology, Minor</strong></p><h1 id="142d6b28-2659-4cb8-9856-ba7144a8127f" class="">Skills</h1><hr id="668fb132-548c-4fe7-a91f-04dfbfedb77f"/><p id="a5bb47c2-5897-4d40-88b4-0ab96f2f582b" class=""><strong>•   Kubernetes</strong><br/><br/><strong>•   Docker</strong><br/><br/><strong>•   Linux</strong><br/><br/><strong>•   AWS</strong><br/><br/><strong>•   GCP</strong></p><p id="2f61cdb9-88fd-4ee1-819c-60643b1cb212" class="">
-</p></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingiTech | Strategic Technology Solutions</title>
+    <meta name="description" content="Caribbean-based strategic technology consultancy specializing in DevOps, AI solutions, cybersecurity, and custom platform development for government and enterprise clients.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BingiTech | Strategic Technology Solutions">
+    <meta property="og:description" content="Strategic technology consultancy delivering enterprise solutions across the Caribbean and globally.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bingitech.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <style>
+        :root {
+            --jamaica-green: #009639;
+            --jamaica-black: #000000;
+            --jamaica-gold: #FFCD00;
+            --caribbean-blue: #0066cc;
+            --text-light: #f8f9fa;
+            --text-muted: #6c757d;
+            --gradient-bg: linear-gradient(135deg, var(--jamaica-black), var(--jamaica-green));
+            --gradient-accent: linear-gradient(45deg, var(--jamaica-gold), var(--caribbean-blue));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background: var(--gradient-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--jamaica-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: var(--jamaica-black);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 205, 0, 0.3);
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 6rem 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--jamaica-gold);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .price-range {
+            font-weight: 700;
+            color: var(--jamaica-green);
+            font-size: 1.1rem;
+        }
+
+        /* Demos Section */
+        .demos {
+            padding: 6rem 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .demos h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .demo-content {
+            padding: 1.5rem;
+        }
+
+        .demo-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--jamaica-gold);
+        }
+
+        .demo-content p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .demo-link {
+            color: var(--caribbean-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .demo-link:hover {
+            color: var(--jamaica-gold);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 2rem;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--jamaica-gold);
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .contact-item p {
+            color: var(--text-muted);
+        }
+
+        .contact-item a {
+            color: var(--caribbean-blue);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--jamaica-gold);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card, .demo-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .service-card:nth-child(2) { animation-delay: 0.1s; }
+        .service-card:nth-child(3) { animation-delay: 0.2s; }
+        .demo-card:nth-child(2) { animation-delay: 0.1s; }
+        .demo-card:nth-child(3) { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">BingiTech</div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#demos">Demos</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Strategic Technology Solutions</h1>
+                <p class="subtitle">Caribbean-based consultancy delivering enterprise-grade DevOps, AI, and custom platform solutions for government and enterprise clients worldwide.</p>
+                <a href="#contact" class="cta-button">Start Your Project</a>
+            </section>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">☁️</span>
+                    <h3>DevOps & Cloud Infrastructure</h3>
+                    <p>Enterprise AWS/GCP deployments, Kubernetes orchestration, CI/CD automation, and infrastructure as code using Terraform.</p>
+                    <div class="price-range">$5K - $50K projects</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🤖</span>
+                    <h3>AI & Emerging Technology</h3>
+                    <p>Custom AI model deployment, edge computing solutions, machine learning pipelines, and intelligent automation systems.</p>
+                    <div class="price-range">$15K - $100K projects</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🛡️</span>
+                    <h3>Cybersecurity Solutions</h3>
+                    <p>Security architecture design, vulnerability assessments, compliance frameworks, and incident response planning.</p>
+                    <div class="price-range">$10K - $75K assessments</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🏖️</span>
+                    <h3>Tourism & Hospitality Technology</h3>
+                    <p>Custom booking platforms, AI-powered content generation, mobile-first experiences, and tourism analytics dashboards.</p>
+                    <div class="price-range">$25K - $150K platforms</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Creative Technology</h3>
+                    <p>Interactive experiences, real-time content generation, IoT integrations, and multimedia platform development.</p>
+                    <div class="price-range">$20K - $100K projects</div>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3>Strategic Technology Consulting</h3>
+                    <p>Digital transformation roadmaps, technology stack optimization, scalability planning, and executive advisory services.</p>
+                    <div class="price-range">$5K - $50K engagements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demos Section -->
+    <section class="demos" id="demos">
+        <div class="container">
+            <h2>Live Platform Demonstrations</h2>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <div class="demo-content">
+                        <h3>🇻🇬 British Virgin Islands Tourism</h3>
+                        <p>AI-powered tourism platform with dynamic content generation, responsive design, and global CDN delivery.</p>
+                        <a href="https://demo-bvi.com" class="demo-link" target="_blank">View Live Demo →</a>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-content">
+                        <h3>🇱🇨 Saint Lucia Experience Platform</h3>
+                        <p>Advanced tourism showcase featuring Pitons imagery, luxury resort experiences, and mobile-optimized design.</p>
+                        <a href="https://d23zucj5s9o84k.cloudfront.net" class="demo-link" target="_blank">View Live Demo →</a>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-content">
+                        <h3>⚡ Edge AI Infrastructure</h3>
+                        <p>Distributed computing deployment across Nvidia Jetson and Raspberry Pi devices for real-time processing.</p>
+                        <a href="#contact" class="demo-link">Request Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Caribbean Expertise, Global Reach</h2>
+            <p>Based in the Caribbean with deep understanding of regional technology needs, we deliver world-class solutions that compete globally while addressing local challenges. Our expertise spans from government tourism boards to enterprise clients requiring robust, scalable technology platforms.</p>
+            <p>We specialize in rapid prototyping, enterprise-grade deployments, and strategic technology planning that drives measurable business outcomes. Our Caribbean perspective brings unique insights to tourism technology, edge computing in remote environments, and resilient infrastructure design.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Technology?</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="icon">💼</span>
+                    <h3>Enterprise Consulting</h3>
+                    <p>Strategic technology planning and enterprise solution architecture</p>
+                    <p><a href="mailto:enterprise@bingitech.io">enterprise@bingitech.io</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="icon">🚀</span>
+                    <h3>Project Development</h3>
+                    <p>Custom platform development and rapid prototyping services</p>
+                    <p><a href="mailto:projects@bingitech.io">projects@bingitech.io</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="icon">🏛️</span>
+                    <h3>Government Services</h3>
+                    <p>Tourism boards, public sector technology, and compliance solutions</p>
+                    <p><a href="mailto:government@bingitech.io">government@bingitech.io</a></p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="mailto:hello@bingitech.io" class="cta-button">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BingiTech Strategic Solutions. Delivering excellence from the Caribbean to the world.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-based animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.service-card, .demo-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
